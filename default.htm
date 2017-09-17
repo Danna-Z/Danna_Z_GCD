@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	
+	<title>Simplica | HTML Template</title>
+	
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+	
+	<!-- Styles -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link href="../../fonts.googleapis.com/css@family=Droid+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="css/elasti-carousel.css">
+	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="css/prettyPhoto.css">
+	<link rel="stylesheet" href="css/skin_switcher.css"/>
+	
+	<!-- For Changing Skin Add
+	<link rel="stylesheet" href="css/blue.css"/>
+	-->
+	
+	<link rel="stylesheet" href="css/custom.css"/>
+	
+	<!-- Scripts -->
+	<script src="js/jquery.js"></script>
+	
+	<script src="js/custom.js"></script>
+	<script src="js/prettyPhoto.js"></script>
+	<script src="js/placeholder.js"></script>
+	<script src="js/slides.min.jquery.js"></script>
+	<script src="js/tinynav.min.js"></script>
+	<script type="text/javascript">
+		var menuids=["top_nav"] //Enter id(s) of each Side Bar Menu's main UL, separated by commas
+		function initsidebarmenu(){
+		for (var i=0; i<menuids.length; i++){
+		  var ultags=document.getElementById(menuids[i]).getElementsByTagName("ul")
+			for (var t=0; t<ultags.length; t++){
+			ultags[t].parentNode.getElementsByTagName("a")[0].className+=" subfolderstyle"
+		  if (ultags[t].parentNode.parentNode.id==menuids[i]) //if this is a first level submenu
+		   ultags[t].style.left=ultags[t].parentNode.offsetWidth+"px" //dynamically position first level submenus to be width of main menu item
+		  else //else if this is a sub level submenu (ul)
+			ultags[t].style.left=ultags[t-1].getElementsByTagName("a")[0].offsetWidth+"px" //position menu to the right of menu item that activated it
+			ultags[t].parentNode.onmouseover=function(){
+			this.getElementsByTagName("ul")[0].style.display="block"
+			}
+			ultags[t].parentNode.onmouseout=function(){
+			this.getElementsByTagName("ul")[0].style.display="none"
+			}
+			}
+		  for (var t=ultags.length-1; t>-1; t--){ //loop through all sub menus again, and use "display:none" to hide menus (to prevent possible page scrollbars
+		  ultags[t].style.visibility="visible"
+		  ultags[t].style.display="none"
+		  }
+		  }
+		}
+
+		if (window.addEventListener)
+		window.addEventListener("load", initsidebarmenu, false)
+		else if (window.attachEvent)
+		window.attachEvent("onload", initsidebarmenu)
+	</script>
+	<script>
+		$(function(){
+			$('.flexslider').flexslider({
+				pauseOnHover: true,
+				animation: "fade",
+				slideshowSpeed:4000,
+				slideshow: true,
+				animationDuration: 600
+			});
+			if($(window).width()<=767){
+				$('.flex-direction-nav li a').css("display","block");
+			}
+			
+			else if($(window).width()>=767){
+				$(".flexslider").mouseover(function() {
+					$('.flex-direction-nav li a').css("display","block");
+					}).mouseout(function() {
+					$('.flex-direction-nav li a').css("display","none");
+				});
+			}
+			
+			
+		});
+	</script>
+	<!--[if lt IE 9]>
+		<script src="../../css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<script src="js/flexslider.js"></script>
+	<script src="js/elasti-carousel.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div id="skin_switcher">
+			<span>
+			<a href="#" class="skin_switcher_toggle"></a>
+			<div>
+				<select id="skin_select">
+					<option value="default">Default</option>
+					<option value="css/red.css">Red</option>
+					<option value="css/green.css">Green</option>
+					<option value="css/black.css">Black</option>
+					<option value="css/blue.css">Blue</option>
+					<option value="css/brown.css">Brown</option>
+					<option value="css/purple.css">Purple</option>					
+				</select>
+			</div>
+			</span>
+		</div>
+		<div id="header">
+			<div class="header_wrapper">
+				<div id="logo">
+					<a href="index.html"><img src="files/logo.png" alt="" /></a>
+				</div>
+				
+				<ul id="top_nav">
+					<li class="selected"><a class="submenu" href="index.html">Home</a>
+						<ul>
+							<li><a href="index.html">Home Default</a></li>
+							<li><a href="index-2.html">Home Alternative</a></li>
+						</ul>
+					</li>
+					<li><a href="myself.html">Myself</a></li>
+					<li><a href="blog.html">Blog</a></li>
+					<li><a class="submenu" href="folio.html">Folio</a>
+						<ul>
+							<li><a href="folio.html">Folio Default</a></li>
+							<li><a href="folio-2.html">Folio Left Sidebar</a></li>
+							<li><a href="folio-1.html">Folio Right Sidebar</a></li>
+						</ul>
+					</li>
+					<li><a href="reach.html">Reach</a></li>
+				</ul>
+				
+				<div id="top_social">
+					<div id="top_social_icons">
+						<span>Follow</span>
+						<ul>
+							<li class="top_twitter"><a href="../../twitter.com/default.htm">Twitter</a></li>
+							<li class="top_facebook"><a href="../../facebook.com/default.htm">Facebook</a></li>
+							<li class="top_linkedin"><a href="../../linkedin.com/default.htm">LinkedIn</a></li>
+							<li class="top_flickr"><a href="../../flickr.com/default.htm">Flickr</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="header_bg"></div>
+			
+			<div class="clear"></div>
+		</div>
+		
+		<div id="sub_header">
+			<div class="flexslider">
+				<ul id="slides" class="slides">
+					<li>
+						<img src="files/1.jpg" alt="" />
+						<div class="flex-caption">
+							<h4><a href="#">Luctus sed interdum vitae</a></h4>
+							<p>Fusce eu nisl at ipsum tempus accumsan</p>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="files/2.jpg" alt="" /></a>
+					</li>
+					<li>
+						<img src="files/3.jpg" alt="" />
+						<div class="flex-caption">
+							<h4><a href="#">Praesent ultrices porta viverra</a></h4>
+							<p>Venenatis convallis lectus diam ac tortor</p>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="files/4.jpg" alt="" /></a>
+					</li>
+					<li>
+						<img src="files/5.jpg" alt="" />
+						<div class="flex-caption">
+							<h4><a href="#">Vivamus vel erat augue</a></h4>
+							<p>Eget magna id purus condimentum malesuada nec at</p>
+						</div>
+					</li>
+				</ul>
+			 </div>
+		</div>
+		
+		<div id="content">
+			<div id="home_content" class="container">
+				<div class="headline sixteen columns">
+					<h2 class="subheading">Sed ut perspiciatis unde <a href="#">omnis iste natus error sit voluptatem</a> accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</h2>
+				</div>
+				
+				<!-- Elastislide Carousel -->
+				<div id="carousel" class="es-carousel-wrapper sixteen columns">
+					<div class="es-carousel">
+						<ul>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-6.jpg" class="scale-with-grid" alt="image01" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">Finibus Bonorum et Malorum!</a></h4>
+								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+								<span class="subheading">in <a href="#">Advertising</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-7.jpg" class="scale-with-grid" alt="image02" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">laboris nisi ut aliquip</a></h4>
+								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione .</p>
+								<span class="subheading">in <a href="#">Advertising</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-8.jpg" class="scale-with-grid" alt="image03" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">accusantium doloremque</a></h4>
+								<p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.praesentium voluptatum deleniti atque corrupti.</p>
+								<span class="subheading">in <a href="#">Photography</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-9.jpg" class="scale-with-grid" alt="image04" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">Finibus Bonorum et Malorum!</a></h4>
+								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+								<span class="subheading">in <a href="#">Advertising</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-10.jpg" class="scale-with-grid" alt="image05" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">laboris nisi ut aliquip</a></h4>
+								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione .</p>
+								<span class="subheading">in <a href="#">Advertising</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-11.jpg" class="scale-with-grid" alt="image06" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">accusantium doloremque</a></h4>
+								<p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.praesentium voluptatum deleniti atque corrupti.</p>
+								<span class="subheading">in <a href="#">Photography</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-12.jpg" class="scale-with-grid" alt="image04" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">Finibus Bonorum et Malorum!</a></h4>
+								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+								<span class="subheading">in <a href="#">Advertising</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-1.jpg" class="scale-with-grid" alt="image04" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">Finibus Bonorum et Malorum!</a></h4>
+								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+								<span class="subheading">in <a href="#">Advertising</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-2.jpg" class="scale-with-grid" alt="image04" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">Finibus Bonorum et Malorum!</a></h4>
+								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+								<span class="subheading">in <a href="#">Advertising</a></span>
+							</li>
+							<li>
+								<div class="thumb_post_link">
+									<a href="#"><img src="files/thumb/thumb-3.jpg" class="scale-with-grid" alt="image04" /></a>
+									<a href="folio-single.html" class="thumb_post_link_inner"></a>
+								</div>
+								<h4><a href="folio-single.html">Finibus Bonorum et Malorum!</a></h4>
+								<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+								<span class="subheading">in <a href="#">Advertising</a></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- End Elastislide Carousel -->
+				
+				<div class="testimonials eleven columns alpha row">
+					<h4>Testmonials</h4>
+					<p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+					
+					<blockquote class="testimonial five columns alpha">
+						<p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+						<cite><a href="#">John Smith</a> - Manager</cite>
+					</blockquote>
+					
+					<blockquote class="testimonial five columns omega">
+						<p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+						<cite><a href="#">John Smith</a> - Manager</cite>
+					</blockquote>
+
+					<div class="clear"></div>
+				</div>
+				
+				<div class="newsletter five columns omega row">
+					<h4>Newsletter</h4>
+					<p>Habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. </p>
+					<form id="newsletter">
+						<input type="text" placeholder="enter your email address here">
+						<input type="submit" value="GO!">
+					</form>
+					<div class="clear"></div>
+					<span class="subheading extra_note">* your email address will be safe with us.</span>
+				</div>
+			</div>
+		</div>
+		
+		<div id="sub_content">
+			<div class="container">
+				<div class="recent_post_pics nine columns alpha">
+					<h4>From The Blog</h4>
+					<ul>
+						<li class="three columns alpha">
+							<div class="thumb_post_link">
+								<a href="#"><img src="files/home-1.jpg" alt="" /></a>
+								<a href="#" class="thumb_post_link_inner"></a>
+							</div>						
+							<span><a href="#">At vero eos et accusamus</a></span>
+						</li>
+						<li class="three columns">
+							<div class="thumb_post_link">
+								<a href="#"><img src="files/home-2.jpg" alt="" /></a>
+								<a href="#" class="thumb_post_link_inner"></a>
+							</div>
+							<span><a href="#">Et iusto odio dignissimos ducimus</a></span>
+						</li>
+						<li class="three columns omega">
+							<div class="thumb_post_link">
+								<a href="#"><img src="files/home-3.jpg" alt="" /></a>
+								<a href="#" class="thumb_post_link_inner"></a>
+							</div>
+							<span><a href="#">Deleniti atque corrupti.</a></span>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="twitter_update content_slides five columns offset-by-two omega">
+					<div class="slides_container twitter_slider">
+						<div>
+							<p><a href="#">@johnsmith</a> littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. <a href="#">htttp://gl.com/bklt</a></p>
+						</div>
+						
+						<div>
+							<p><a href="#">@johnsmith</a> littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. <a href="#">htttp://gl.com/bklt</a></p>
+						</div>
+						
+						<div>
+							<p><a href="#">@johnsmith</a> littera gothica, quam nunc putamus parum claram, anteposuerit. <a href="#">htttp://gl.com/bklt</a></p>
+						</div>
+					</div>
+					<h4>Twitter Updates</h4>
+					<span class="subheading"><a href="#">see all tweets &rarr;</a></span>
+					<div class="twitter_bird"></div>				
+				</div>
+			</div>
+			
+			<div class="sub_content_bg"></div>
+			
+			<div class="clear"></div>
+		</div>
+		
+		<div id="footer">
+			<div class="container">
+				<div class="foot_col four columns alpha">
+					<h4>Archive</h4>
+					<ul>
+						<li><a href="#">July</a></li>
+						<li><a href="#">August</a></li>
+						<li><a href="#">September</a></li>
+						<li><a href="#">October</a></li>
+						<li><a href="#">November</a></li>
+					</ul>
+				</div>
+				
+				<div class="foot_col four columns">
+					<h4>Pages</h4>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Folio</a></li>
+						<li><a href="#">Myself</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Reach</a></li>
+					</ul>
+				</div>
+				
+				<div class="foot_col four columns">
+					<h4>Links</h4>
+					<ul>
+						<li><a href="#">Themeforest</a></li>
+						<li><a href="#">Activeden</a></li>
+						<li><a href="#">Smashing Magazine</a></li>
+						<li><a href="#">Graphic River</a></li>
+						<li><a href="#">Tutsplus</a></li>
+					</ul>
+				</div>
+				
+				<div class="foot_col four columns omega">
+					<h4>Social Links</h4>
+					<ul>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">LinkedIn</a></li>
+						<li><a href="#">Flickr</a></li>
+						<li><a href="#">Wordpress</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div id="sub_footer">
+			<div class="container">
+				<div id="left_sub_footer" class="eleven columns alpha">
+					<p>Copyright 2011, <a href="#">Simplica</a>. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></p>
+				</div>
+				<div id="right_sub_footer" class="five columns omega">
+					<a href="#"><img src="files/footer_logo.png" alt="" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

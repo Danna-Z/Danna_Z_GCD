@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	
+	<title>Myself - Simplica | HTML Template</title>
+	
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+	
+	<!-- Styles -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link href="../../fonts.googleapis.com/css@family=Droid+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="css/elasti-carousel.css">
+	<link rel="stylesheet" href="css/prettyphoto.css"/>
+	<link rel="stylesheet" href="css/skin_switcher.css"/>
+	
+	
+	<!-- For Changing Skin Add
+	<link rel="stylesheet" href="css/blue.css"/>
+	-->
+		
+	<link rel="stylesheet" href="css/custom.css"/>
+	
+	<!-- Scripts -->
+	<script src="js/jquery.js"></script>
+	<script src="js/placeholder.js"></script>
+	<script src="js/prettyPhoto.js"></script>
+	<script src="js/slides.min.jquery.js"></script>
+	<script src="js/tinynav.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+	<script src="js/elasti-carousel.js"></script>
+	<script src="js/custom.js"></script>
+	<script type="text/javascript">
+		var menuids=["top_nav"] //Enter id(s) of each Side Bar Menu's main UL, separated by commas
+		function initsidebarmenu(){
+		for (var i=0; i<menuids.length; i++){
+		  var ultags=document.getElementById(menuids[i]).getElementsByTagName("ul")
+			for (var t=0; t<ultags.length; t++){
+			ultags[t].parentNode.getElementsByTagName("a")[0].className+=" subfolderstyle"
+		  if (ultags[t].parentNode.parentNode.id==menuids[i]) //if this is a first level submenu
+		   ultags[t].style.left=ultags[t].parentNode.offsetWidth+"px" //dynamically position first level submenus to be width of main menu item
+		  else //else if this is a sub level submenu (ul)
+			ultags[t].style.left=ultags[t-1].getElementsByTagName("a")[0].offsetWidth+"px" //position menu to the right of menu item that activated it
+			ultags[t].parentNode.onmouseover=function(){
+			this.getElementsByTagName("ul")[0].style.display="block"
+			}
+			ultags[t].parentNode.onmouseout=function(){
+			this.getElementsByTagName("ul")[0].style.display="none"
+			}
+			}
+		  for (var t=ultags.length-1; t>-1; t--){ //loop through all sub menus again, and use "display:none" to hide menus (to prevent possible page scrollbars
+		  ultags[t].style.visibility="visible"
+		  ultags[t].style.display="none"
+		  }
+		  }
+		}
+
+		if (window.addEventListener)
+		window.addEventListener("load", initsidebarmenu, false)
+		else if (window.attachEvent)
+		window.attachEvent("onload", initsidebarmenu)
+	</script>	
+</head>
+<body>
+	<div id="wrapper">
+		<div id="skin_switcher">
+			<span>
+			<a href="#" class="skin_switcher_toggle"></a>
+			<div>
+				<select id="skin_select">
+					<option value="default">Default</option>
+					<option value="css/red.css">Red</option>
+					<option value="css/green.css">Green</option>
+					<option value="css/black.css">Black</option>
+					<option value="css/blue.css">Blue</option>
+					<option value="css/brown.css">Brown</option>
+					<option value="css/purple.css">Purple</option>					
+				</select>
+			</div>
+			</span>
+		</div>
+		<div id="header">
+				<div class="header_wrapper">
+					<div id="logo">
+						<!--
+						<a href="index.html"><img src="files/logo.png" alt="" /></a>
+						-->
+						<h1 style="color: white; margin-bottom: 0;">Danna Z</h1>
+						<p style="color: white; font-weight: bold; font-size: 22px;">eat, pray, love</p>
+					</div>
+					
+					<ul id="top_nav">
+						<li><a href="myself.html">Home</a></li>						
+						<!--
+						<li class="selected"><a class="submenu" href="index.html">Home</a>
+							<ul>
+								<li><a href="index.html">Home Default</a></li>
+								<li><a href="index-2.html">Home Alternative</a></li>
+							</ul>
+						-->
+	
+						</li>
+						<li><a href="myself.html">Myself</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="blog.html">Contact</a></li>
+					
+						<!--
+						<li><a class="submenu" href="folio.html">Folio</a>
+							<ul>
+								<li><a href="folio.html">Folio Default</a></li>
+								<li><a href="folio-2.html">Folio Left Sidebar</a></li>
+								<li><a href="folio-1.html">Folio Right Sidebar</a></li>
+							</ul>
+						</li>
+						-->
+						<!--
+						<li><a href="reach.html">Reach</a></li>
+					</ul>
+					
+					<div id="top_social">
+						<div id="top_social_icons">
+							<span>Follow</span>
+							<ul>
+								<li class="top_twitter"><a href="../../twitter.com/default.htm">Twitter</a></li>
+								<li class="top_facebook"><a href="../../facebook.com/default.htm">Facebook</a></li>
+								<li class="top_linkedin"><a href="../../linkedin.com/default.htm">LinkedIn</a></li>
+								<li class="top_flickr"><a href="../../flickr.com/default.htm">Flickr</a></li>
+							</ul>
+						</div>
+					</div>
+						-->
+						
+				</div>
+				
+				<div class="header_bg"></div>
+				
+				<div class="clear"></div>
+			</div>
+		
+		<div id="sub_header">
+			<div class="container">
+			<h4 class="subheading twelve columns alpha">  终极理想：“充满牢绩，诗意地栖居在大地上。”
+					<br>个性癖好：喜欢阅读，爱看电影，热爱旅行，更爱交朋友。
+					<br>书之最爱：《飘》、《瓦尔登湖》、《我们仨》、《大地上的悲悯》……
+					<br>推荐电影：《幸福来敲门》、《永不妥协》、《蒙娜丽莎的微笑》、《姐姐的守护者》、《本杰明·巴顿奇事》……
+					
+				</h4>
+			<h1 class="heading four columns omega">Myself</h1>
+			</div>
+		</div>
+		
+		<div id="inner_content" class="container">
+			
+			<h3>不得不提一下：电影《舞后》</h3>
+			<p> 韩国电影《舞后》乍一看是闹闹腾腾成名路加上韩国政治大选，实则在讲述普通男人、女人在这“大时代”的生存实况。这一点上韩国也好，中国也罢，全世界都差不离。
+		虽然只是在电脑上看，也让我哭哭笑笑，感动了好几回。 ”家人不是可以管理的存在，是一起携手寻找希望的人。…市民也和家人一样。“  
+			</p>
+			<p> 当家庭与个人梦想冲突时，到底选哪个？这个电影或许能带来一些思考…… 可是，若没有大的天灾人祸，这怎么会是二选一的命题呢？不是应该互相支撑的吗？为什么搞得好像非要选一样，再牺牲一个。多少带点悲壮或隐忍。悲壮连接着死亡或痛苦，隐忍也总有一天会爆发。</p>
+			<hr class="gap_ruler" />
+			<ul>
+				<li class="column one-third alpha">
+					<a href="#"><img src="files/thumb/thumb-6.jpg" class="scale-with-grid" alt="image01" /></a>
+					<h3>Our Vision</h3>
+					<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur bibendum justo et odio pellentesque suscipit. Etiam laoreet nibh non lorem imperdiet in iaculis elit euismod.</p>
+					<p>Fusce vel risus risus, eu placerat purus. Proin et purus nec magna sodales sodales sit amet vitae urna. Maecenas congue dolor vitae mi dapibus adipiscing. Phasellus eu tortor nisi. Vestibulum accumsan egestas dapibus. Proin lectus ante, aliquet et imperdiet ut, gravida et ante. Quisque quam ligula.</p>
+				</li>
+				<li class="column one-third">
+					<a href="#"><img src="files/thumb/thumb-7.jpg" class="scale-with-grid" alt="image02" /></a>
+					<h3>Our Mission</h3>
+					<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis.</p>
+					<p>Dolore te feugait nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur bibendum justo et odio pellentesque suscipit. Etiam laoreet nibh non lorem imperdiet in iaculis elit euismod.</p>
+					<p>Fusce vel risus risus, eu placerat purus. Proin et purus nec magna sodales sodales sit amet vitae urna. Maecenas congue dolor vitae mi dapibus adipiscing. Phasellus eu tortor nisi. Vestibulum accumsan egestas dapibus. Proin lectus ante, aliquet et imperdiet ut, gravida et ante. Quisque quam ligula.</p>
+				</li>
+				<li class="column one-third omega">
+					<a href="#"><img src="files/thumb/thumb-8.jpg" class="scale-with-grid" alt="image03" /></a>
+					<h3>Values</h3>
+					<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur bibendum justo et odio pellentesque suscipit. Etiam laoreet nibh non lorem imperdiet in iaculis elit euismod.</p>
+					<p>Fusce vel risus risus, eu placerat purus. Proin et purus nec magna sodales sodales sit amet vitae urna. Maecenas congue dolor vitae mi dapibus adipiscing. Phasellus eu tortor nisi. Vestibulum accumsan egestas dapibus. Proin lectus ante, aliquet et imperdiet ut, gravida et ante. Quisque quam ligula, </p>
+				</li>
+			</ul>
+			<div class="clear"></div>
+			<hr class="gap_ruler" />
+			<h4>Our random Works</h4>
+			<ul>
+				<li class="column one-third alpha">
+					<div class="thumb_post_link zitem">
+						<img src="files/thumb/thumb-6.jpg" alt="image01" class="" />
+						<div class="zoom_icon"><a href="files/6.jpg" rel="prettyPhoto" title="This is the description"></a></div>
+						<a href="#" class="thumb_post_link_inner"></a>
+					</div>
+					<h4><a href="#">Quis nostrum exercitationem!</a></h4>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariaturoccaecat cupidatat non proident.</p>
+					<span class="subheading">in <a href="#">Advertising</a></span>
+				</li>
+				<li class="column one-third">
+					<div class="thumb_post_link zitem">
+						<img src="files/thumb/thumb-7.jpg" alt="image02" />
+						<div class="zoom_icon"><a href="files/7.jpg" rel="prettyPhoto" title="This is the description"></a></div>
+						<a href="#" class="thumb_post_link_inner"></a>
+					</div>
+					<h4><a href="#">Neque porro quisquam est</a></h4>
+					<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+					<span class="subheading">in <a href="#">Advertising</a></span>
+				</li>
+				<li class="column one-third omega">
+					<div class="thumb_post_link zitem">
+						<img src="files/thumb/thumb-8.jpg" alt="image03" />
+						<div class="zoom_icon"><a href="files/8.jpg" rel="prettyPhoto" title="This is the description"></a></div>
+						<a href="#" class="thumb_post_link_inner"></a>
+					</div>
+					<h4><a href="#">Fugiat quo voluptas nulla pariat</a></h4>
+					<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<span class="subheading">in <a href="#">Photography</a></span>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="sub_content">
+			<div class="container">
+				<div class="recent_post_pics nine columns alpha">
+					<h4>From The Blog</h4>
+					<ul>
+						<li class="three columns alpha">
+							<div class="thumb_post_link">
+								<a href="#"><img src="files/home-1.jpg" alt="" /></a>
+								<a href="#" class="thumb_post_link_inner"></a>
+							</div>						
+							<span><a href="#">At vero eos et accusamus</a></span>
+						</li>
+						<li class="three columns">
+							<div class="thumb_post_link">
+								<a href="#"><img src="files/home-2.jpg" alt="" /></a>
+								<a href="#" class="thumb_post_link_inner"></a>
+							</div>
+							<span><a href="#">Et iusto odio dignissimos ducimus</a></span>
+						</li>
+						<li class="three columns omega">
+							<div class="thumb_post_link">
+								<a href="#"><img src="files/home-3.jpg" alt="" /></a>
+								<a href="#" class="thumb_post_link_inner"></a>
+							</div>
+							<span><a href="#">Deleniti atque corrupti.</a></span>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="twitter_update content_slides five columns offset-by-two omega">
+					<div class="slides_container twitter_slider">
+						<div>
+							<p><a href="#">@johnsmith</a> littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. <a href="#">htttp://gl.com/bklt</a></p>
+						</div>
+						
+						<div>
+							<p><a href="#">@johnsmith</a> littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. <a href="#">htttp://gl.com/bklt</a></p>
+						</div>
+						
+						<div>
+							<p><a href="#">@johnsmith</a> littera gothica, quam nunc putamus parum claram, anteposuerit. <a href="#">htttp://gl.com/bklt</a></p>
+						</div>
+					</div>
+					<h4>Twitter Updates</h4>
+					<span class="subheading"><a href="#">see all tweets &rarr;</a></span>
+					<div class="twitter_bird"></div>
+				</div>
+				
+			</div>
+			
+			<div class="sub_content_bg"></div>
+			
+			<div class="clear"></div>
+		</div>
+		
+		<div id="footer">
+			<div class="container">
+				<div class="foot_col four columns alpha">
+					<h4>Archive</h4>
+					<ul>
+						<li><a href="#">July</a></li>
+						<li><a href="#">August</a></li>
+						<li><a href="#">September</a></li>
+						<li><a href="#">October</a></li>
+						<li><a href="#">November</a></li>
+					</ul>
+				</div>
+				
+				<div class="foot_col four columns">
+					<h4>Pages</h4>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Folio</a></li>
+						<li><a href="#">Myself</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Reach</a></li>
+					</ul>
+				</div>
+				
+				<div class="foot_col four columns">
+					<h4>Links</h4>
+					<ul>
+						<li><a href="#">Themeforest</a></li>
+						<li><a href="#">Activeden</a></li>
+						<li><a href="#">Smashing Magazine</a></li>
+						<li><a href="#">Graphic River</a></li>
+						<li><a href="#">Tutsplus</a></li>
+					</ul>
+				</div>
+				
+				<div class="foot_col four columns omega">
+					<h4>Social Links</h4>
+					<ul>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">LinkedIn</a></li>
+						<li><a href="#">Flickr</a></li>
+						<li><a href="#">Wordpress</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<div id="sub_footer">
+			<div class="container">
+				<div id="left_sub_footer" class="eleven columns alpha">
+					<p>Copyright 2011, <a href="#">Simplica</a>. More Templates <a href="http://www.模板之家.com/" target="_blank" title="模板之家">模板之家</a></p>
+				</div>
+				<div id="right_sub_footer" class="five columns omega">
+					<a href="#"><img src="files/footer_logo.png" alt="" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
